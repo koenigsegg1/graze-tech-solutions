@@ -1,0 +1,102 @@
+.landing {
+	display: flex;
+	align-items: center;
+	align-content: space-between;
+	justify-content: center;
+	font-size: 112px;
+	flex-wrap: wrap;
+	padding: 0 56px;
+	min-height: calc(100vh + 80px);
+	background: url('/img/Home%20Background.png') center/cover;
+	padding-bottom: 80px;
+	@media(max-width: 750px) {
+//		padding: 0 0 80px 0;
+		align-content: center;
+		padding: 75px 0 0 0;
+		min-height: 100vh;
+		.text {
+			margin-bottom: 30px;
+		}
+		> svg.logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 150px;
+			margin: 21px 30px;
+		}
+	}
+	@media(max-width: 370px) {
+		font-size: 95px;
+		padding: 90px 0 0 0;
+	}
+}
+
+.text{
+	flex: 1 1 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 45px;
+	@media (max-width: 733px) {
+
+		& > * {
+			// display: inline-block;
+			line-height: 120px;
+		}
+	}
+
+	@media (max-width: 450px) {
+		& > * {
+			// display: inline-block;
+			line-height: 100px;
+		}
+	}
+}
+
+span {
+	.text & {
+		animation: titleShow .25s cubic-bezier(.25,.1,.25,1) both;
+		font-family: $serif;
+		font-family: var(--serif);
+	}
+	.first & {
+		@for $i from 1 through 2 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{1s + $header-delay * $i};
+			}
+		}
+	}
+	.second & {
+		@for $i from 1 through 5 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{1.2s + $header-delay * $i};
+			}
+		}
+	}
+	.third & {
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{1.7s + $header-delay * $i};
+			}
+		}
+	}
+	.fourth & {
+		@for $i from 1 through 7 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{2.7s + $header-delay * $i};
+			}
+		}
+	}
+}
+
+@keyframes titleShow {
+	0% {
+    opacity: 0;
+	}
+	33%, 66% {
+		opacity: .9;
+	}
+	100% {
+		opacity: .5;
+	}
+}

@@ -1,0 +1,124 @@
+:root {
+	--color: $color;
+//	--color: red;
+	--dark: $dark;
+	--light: $light;
+//	--light: red;
+	--neutral: $neutral;
+	
+	--serif: $serif;
+	--sans-serif: $sans-serif;
+	
+	--header-delay: $header-delay;
+}
+
+@supports (--var: 0) {
+	
+	// Body
+
+	body {
+		font-family: var(--sans-serif);
+		background: var(--dark);
+		color: var(--light);
+	}
+
+	// Navigation
+	
+	nav {
+		color: var(--neutral);
+		li {
+			font: 20px var(--sans-serif);
+		}
+		@media (max-width: 750px){
+			ul {
+				background: var(--dark);
+			}
+		}
+	}
+	
+	// Logo
+	
+	.landing svg path {
+		fill: var(--light);
+	}
+	
+	// Text Animation
+
+	span {
+		.text & {
+			font-family: var(--serif);
+		}
+		.first & {
+			@for $i from 1 through 2 {
+				&:nth-child(#{$i}) {
+					animation-delay: calc(1s + var(--header-delay) * $i);
+				}
+			}
+		}
+		.second & {
+			@for $i from 1 through 5 {
+				&:nth-child(#{$i}) {
+					animation-delay: calc(1.2s + var(--header-delay) * $i);
+				}
+			}
+		}
+		.third & {
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					animation-delay: calc(1.7s + var(--header-delay) * $i);
+				}
+			}
+		}
+		.fourth & {
+			@for $i from 1 through 7 {
+				&:nth-child(#{$i}) {
+					animation-delay: calc(2.7s + var(--header-delay) * $i);
+				}
+			}
+		}
+	}
+
+	// Scroll Hint
+
+	.scroll {
+//		border: 2px solid var(--light);
+		&:before {
+			background: var(--light);
+		}
+		&:after {
+			border-bottom: 2px solid var(--light);
+			border-right: 2px solid var(--light);
+		}
+	}
+
+	// What We Do
+	
+	.do {
+		background: var(--light);
+		.main {
+			background: var(--color);
+			box-shadow: 0px 0px 100px 0px var(--color);
+		}
+	}
+	
+	.main {
+		h1 {
+			color: var(--light);
+			opacity: .25;
+		}
+		p {
+			color: var(--light);
+			opacity: .75;
+			&::first-letter {
+				font: 80px/55px var(--serif);
+				color: var(--light);
+			}
+		}
+	}
+		
+	// Footer
+
+	footer {
+		background: var(--color);
+	}
+}

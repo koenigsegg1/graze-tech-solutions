@@ -1,0 +1,47 @@
+$color: #266fe9;
+$color-solid: #961ab2;
+$color: linear-gradient(135deg, #ff00cc, #333399);
+$dark: #333;
+$darker: #292929;
+$darkest: #222;
+$light: #fff;
+$neutral: #dadfe1;
+
+$serif: 'Voga', serif;
+//$sans-serif: 'Assistant', 'Helvetica', 'Arial', sans-serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+
+$header-delay: .07s;
+
+
+:root {
+	--color-solid: $color-solid;
+	--color: $color;
+	--dark: $dark;
+	--darker: $darker;
+	--darkest: $darkest;
+	--light: $light;
+	--neutral: $neutral;
+	
+	--serif: $serif;
+	--sans-serif: $sans-serif;
+	
+	--header-delay: $header-delay;
+}
+
+
+//
+// :root {
+//// --color: #076CF1;
+// --dark: #333;
+// --darker: #292929;
+// --darkest: #222;
+//// --color: #2cd282;
+//// --dark: #212e52;
+//// --darker: #1a274a;
+//// --darkest: #182342;
+//}
+//
+//$dark: var(--dark);
+//$darker: var(--darker);
+//$darkest: var(--darkest);
